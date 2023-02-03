@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout/Layout"
-import PageLoader from "@/components/Loader/PageLoader"
 import "@/styles/globals.css"
 import {
   Poppins,

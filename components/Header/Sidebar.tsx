@@ -46,7 +46,7 @@ export default function Sidebar({ isOpen, setIsOpen, path }: Props) {
               </NavItem>
             </motion.div>
             <motion.div variants={item} onClick={() => setIsOpen(!isOpen)}>
-              <NavItem link="/posts/new" path={path}>
+              <NavItem link="/#new-posts-section" path={path}>
                 New Post
               </NavItem>
             </motion.div>

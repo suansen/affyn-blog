@@ -8,7 +8,7 @@ import FormLoadingLoader from "../Loader/FormLoadingLoader"
 
 const style = {
   inputForm:
-    "appearance-none rounded-none relative block w-full px-3 py-2 text-h2-m md:text-h2 border-b bg-tw-background border-gray-300/30 placeholder-tw-text/20 focus:outline-none focus:ring-tw-text focus:border-tw-text focus:z-10"
+    "appearance-none rounded-none relative block w-full px-3 py-2  border-b bg-tw-background border-gray-300/30 placeholder-tw-text/20 focus:outline-none focus:ring-tw-text focus:border-tw-text focus:z-10"
 }
 
 export default function NewPostsSection() {
@@ -71,7 +71,10 @@ export default function NewPostsSection() {
   }
 
   return (
-    <section className="bg-tw-background text-tw-text min-h-[800px] py-8 relative">
+    <section
+      id="new-posts-section"
+      className="pt-16 bg-tw-background text-tw-text min-h-[800px] py-8 relative"
+    >
       <FormSuccessLoader
         isSuccessful={isSuccessful}
         setIsSuccessful={setIsSuccessful}
@@ -107,7 +110,7 @@ export default function NewPostsSection() {
               </label> */}
               <input
                 onChange={(e) => handleInputChange(e, "title")}
-                className={`${style.inputForm} h-32`}
+                className={`${style.inputForm} h-32 text-h2-m md:text-h2`}
                 id="title"
                 name="title"
                 type="text"
@@ -123,7 +126,7 @@ export default function NewPostsSection() {
               </label> */}
               <input
                 onChange={(e) => handleInputChange(e, "author")}
-                className={`${style.inputForm} h-32`}
+                className={`${style.inputForm} h-32 text-h2-m md:text-h2`}
                 id="author"
                 name="author"
                 type="text"
@@ -139,7 +142,7 @@ export default function NewPostsSection() {
               </label> */}
               <textarea
                 onChange={(e) => handleInputChange(e, "body")}
-                className={`${style.inputForm} h-64 overflow-y-scroll text-p-m md:text-p`}
+                className={`${style.inputForm} h-64 mt-8 text-p-m md:text-p py-8 scrollbar-thin scrollbar-thumb-tw-text cursor-default`}
                 id="body"
                 name="body"
                 required

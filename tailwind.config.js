@@ -19,7 +19,8 @@ module.exports = {
         "featured-header": ["4rem"],
         "featured-header-m": ["2.85rem"],
         "nav-button": ["1.1rem", { lineHeight: "8.75rem" }],
-        "nav-item": ["1.3rem", { lineHeight: "1.625rem" }],
+        "nav-item": ["5rem", { lineHeight: "1.625rem" }],
+        "nav-item-m": ["3.25rem", { lineHeight: "1.625rem" }],
         p: ["1.5rem", { lineHeight: "1.625rem" }],
         "p-m": ["1.125rem", { lineHeight: "1.25rem" }],
         "p-sub": ["1.125rem", { lineHeight: "1.625rem" }],
@@ -50,5 +51,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require("@tailwindcss/line-clamp")]
+  plugins: [require("@tailwindcss/line-clamp"), require("tailwind-scrollbar")]
 }
