@@ -19,7 +19,7 @@ export default function PostCard({ post }: Props) {
     <>
       {/* card */}
       <motion.div
-        variants={item}
+        // variants={item}
         onClick={() => setIsSelected(!isSelected!)}
         className={` bg-tw-text hover:scale-105 border border-tw-text/40 hover:bg-tw-background p-8 text-tw-background hover:text-tw-text flex flex-col justify-between gap-y-4 group cursor-pointer transition-all duration-300 ease-out ${
           isSelected ? "min-h-[24rem] w-96" : "w-80 h-96"
