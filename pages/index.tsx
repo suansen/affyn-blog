@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     {
       method: "GET",
       headers: {
-        "X-Api-Key": process.env.X_API_KEY
+        "x-api-key": process.env.API_SECRET_KEY
       }
     }
   )
