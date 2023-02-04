@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     {
       method: "GET",
       headers: {
-        "x-api-key": process.env.X_API_KEY
+        "X-Api-Key": process.env.X_API_KEY
       }
     }
   )
@@ -48,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   if (!data) {
     return {
-      notFound: true
+      props: { data: { notFound: true } }
     }
   }
 

@@ -15,10 +15,7 @@ export default function FormSuccessLoader({
 }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => isSuccessful && setIsSuccessful(""), 2000)
-    console.log(
-      "🚀 ~ file: FormSuccessLoader.tsx:11 ~ isSuccessful",
-      isSuccessful
-    )
+
     return () => {
       clearTimeout(timer)
     }
