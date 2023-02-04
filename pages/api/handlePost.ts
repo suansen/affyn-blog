@@ -12,7 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const X_API_KEY = process.env.X_API_KEY
+  const API_SECRET_KEY = process.env.API_SECRET_KEY
   const postBody = req.body
 
   const date = new Date().toISOString()
@@ -26,7 +26,7 @@ export default async function handler(
     method: method,
     headers: {
       "content-type": "application/json",
-      "X-Api-Key": X_API_KEY
+      "x-api-key": API_SECRET_KEY
     },
     body: JSON.stringify(postBody)
   }
