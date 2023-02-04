@@ -8,7 +8,7 @@ import Head from "next/head"
 type Props = { data: BlogData }
 
 export default function Home({ data }: Props) {
-  const posts = data.posts.slice(-3)
+  const posts = data?.posts?.slice(-3)
 
   return (
     <>

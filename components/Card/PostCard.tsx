@@ -12,8 +12,8 @@ const item = {
 export default function PostCard({ post }: Props) {
   const [isSelected, setIsSelected] = useState(false)
 
-  const letter = post.author.charAt(0)
-  const date = new Date(post.dateCreated).toDateString()
+  const letter = post?.author.charAt(0)
+  const date = new Date(post?.dateCreated).toDateString()
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function PostCard({ post }: Props) {
         }`}
       >
         <div className={` text-card-header line-clamp-2 leading-none h-16`}>
-          {post.title}
+          {post?.title}
         </div>
         <div className="flex justify-between items-center group">
           <div className="w-10 h-10 bg-tw-background rounded-full text-tw-text group-hover:text-tw-background group-hover:bg-tw-text flex justify-center items-center font-bold font-logo transition-all duration-500 ease-out uppercase">
@@ -37,7 +37,7 @@ export default function PostCard({ post }: Props) {
               {date}
             </div>
             <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out pointer-events-none group-hover:pointer-events-auto overflow-hidden line-clamp-1">
-              {post.author}
+              {post?.author}
             </div>
           </div>
         </div>

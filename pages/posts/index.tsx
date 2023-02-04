@@ -32,7 +32,7 @@ export default function PostsPage({ data }: Props) {
           className="flex flex-wrap justify-center py-16 gap-16"
         >
           {data?.posts?.map((post) => (
-            <PostCard key={post._id} post={post} />
+            <PostCard key={post?._id} post={post} />
           ))}
         </motion.div>
       </div>
