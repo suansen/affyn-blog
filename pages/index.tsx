@@ -8,7 +8,6 @@ import Head from "next/head"
 type Props = { data: BlogData }
 
 export default function Home({ data }: Props) {
-  console.log("🚀 ~ file: index.tsx:11 ~ Home ~ data", data)
   const posts = data?.posts?.slice(-3)
 
   return (
@@ -41,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     {
       method: "GET",
       headers: {
-        "x-api-key": process.env.X_API_KEY
+        "X-Api-Key": process.env.X_API_KEY
       }
     }
   )

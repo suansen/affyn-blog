@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { GetServerSideProps } from "next"
 import { BlogData } from "@/typings"
 import PostCard from "@/components/Card/PostCard"
+import { CrossIcon } from "@/icons/CrossIcon"
 
 type Props = { data: BlogData }
 
@@ -17,7 +18,6 @@ const container = {
 }
 
 export default function PostsPage({ data }: Props) {
-  console.log("🚀 ~ file: index.tsx:20 ~ PostsPage ~ data", data)
   return (
     <>
       <div className="py-32 px-4 md:px-8 2xl:px-0 cursor-default flex flex-col items-center justify-center min-h-screen">
@@ -34,6 +34,16 @@ export default function PostsPage({ data }: Props) {
           {data?.posts?.map((post) => (
             <PostCard key={post?._id} post={post} />
           ))}
+
+          {!data?.posts && (
+            <div className="text-h2-m md:text-h2 w-full flex flex-col gap-y-8 justify-center items-center min-h-[480px] animate-pulse">
+              {" "}
+              <div className="bg-tw-text text-tw-background w-32 h-32 rounded-full">
+                <CrossIcon />
+              </div>
+              No Posts Found.
+            </div>
+          )}
         </motion.div>
       </div>
     </>
@@ -46,15 +56,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
     {
       method: "GET",
       headers: {
-        "x-api-key": process.env.X_API_KEY
+        "X-Api-Key": process.env.X_API_KEY
       }
     }
   )
   const data = await res.json()
-  console.log(
-    "🚀 ~ file: index.tsx:54 ~ constgetServerSideProps:GetServerSideProps= ~ data",
-    data
-  )
 
   if (!data) {
     return {

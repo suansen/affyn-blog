@@ -26,7 +26,7 @@ export default async function handler(
     method: method,
     headers: {
       "content-type": "application/json",
-      "x-api-key": X_API_KEY
+      "X-Api-Key": X_API_KEY
     },
     body: JSON.stringify(postBody)
   }
