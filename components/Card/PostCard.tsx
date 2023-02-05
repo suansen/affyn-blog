@@ -4,11 +4,6 @@ import { motion } from "framer-motion"
 
 type Props = { post: Post }
 
-const item = {
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0, transition: { duration: 1.5 } }
-}
-
 export default function PostCard({ post }: Props) {
   const [isSelected, setIsSelected] = useState(false)
 
